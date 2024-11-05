@@ -18,7 +18,8 @@ Complétez la méthode `NetworkDiscovery::Init()` pour :
 ```cpp
 bool NetworkDiscovery::Init()
 {
-    // À compléter :
+    sf::TcpListener listener;
+    sf::Udpsocket socket;
     // 1. Essayer de lier le socket au port NetworkPort
     // 2. Si échec, essayer les ports suivants jusqu'à succès
     // 3. Ajouter le socket au sélecteur
