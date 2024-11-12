@@ -18,20 +18,30 @@ NetworkGame::~NetworkGame()
 
 bool NetworkGame::HostGame()
 {
-	// À compléter :
+	// Ã€ complÃ©ter :
 	// 1. Configurer le listener TCP sur NetworkPort
-	// 2. Ajouter le listener au sélecteur
-	// 3. Définir _isServer à true
+	// 2. Ajouter le listener au sÃ©lecteur
+	// 3. DÃ©finir _isServer Ã  true
+	_listener.listen(NetworkPort);
+	_selector.add(_listener);
+	_isServer = true;
+	return true;
 	return true;
 }
 
 bool NetworkGame::WaitingAnOpponent()
 {
-	// À compléter :
-	// 1. Vérifier si une connexion est en attente avec le sélecteur
+	// Ã€ complÃ©ter :
+	// 1. VÃ©rifier si une connexion est en attente avec le sÃ©lecteur
 	// 2. Accepter la connexion
 	// 3. Envoyer le nom du joueur local
 	// 4. Configurer la connexion
+	if(_IsConnectionEstablish == true)
+	{
+		_selector.Accepter;
+		socket.send(localPlayerName);
+		
+	}
 	return true;
 }
 
@@ -102,9 +112,9 @@ void NetworkGame::StopPlaying()
 
 bool NetworkGame::SendMove(int row, int col)
 {
-	// À compléter :
-	// 1. Créer un paquet avec MagicPacket et PacketType::Move
-	// 2. Ajouter les coordonnées row et col
+	// Ã€ complÃ©ter :
+	// 1. CrÃ©er un paquet avec MagicPacket et PacketType::Move
+	// 2. Ajouter les coordonnÃ©es row et col
 	// 3. Envoyer le paquet
 	return true;
 }
@@ -177,11 +187,11 @@ bool NetworkGame::SendLocalPlayerName()
 
 sf::Socket::Status NetworkGame::TryToReceivePacket(PacketType packetTypeExpect)
 {
-	// À compléter :
-	// 1. Vérifier si des données sont disponibles
+	// Ã€ complÃ©ter :
+	// 1. VÃ©rifier si des donnÃ©es sont disponibles
 	// 2. Recevoir le paquet
-	// 3. Vérifier le MagicPacket
-	// 4. Vérifier le type de paquet
+	// 3. VÃ©rifier le MagicPacket
+	// 4. VÃ©rifier le type de paquet
 	return sf::Socket::Done;
 }
 
